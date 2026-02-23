@@ -17,7 +17,7 @@ body {
   background-color: #050507;
   color: #c8b89a;
   font-family: var(--font-fell);
-  min-height: 100vh;
+  min-height: 95vh;
   overflow-x: hidden;
 
   /* Noise texture subtle */

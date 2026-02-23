@@ -1,12 +1,12 @@
 "use client";
 
 const QA_SKILLS = [
-  { name: "Manual Testing",       level: 92 },
-  { name: "Selenium / Cypress",   level: 80 },
-  { name: "Postman / API Testing",level: 85 },
-  { name: "Jira / Bug Tracking",  level: 90 },
-  { name: "Test Case Design",     level: 88 },
-  { name: "Regression Testing",   level: 85 },
+  { name: "Manual Testing",        level: 92 },
+  { name: "Selenium / Cypress",    level: 80 },
+  { name: "Postman / API Testing", level: 85 },
+  { name: "Jira / Bug Tracking",   level: 90 },
+  { name: "Test Case Design",      level: 88 },
+  { name: "Regression Testing",    level: 85 },
 ];
 
 const WP_SKILLS = [
@@ -27,13 +27,13 @@ const TOOLS = [
 function SkillBar({ name, level }: { name: string; level: number }) {
   return (
     <div>
-      <div className="flex justify-between text-[11px] mb-1.5">
-        <span className="text-[#7a6848]">{name}</span>
-        <span className="text-[#3a2e1e]">{level}%</span>
+      <div className="flex justify-between text-sm mb-2">
+        <span className="text-[#c8b89a]">{name}</span>
+        <span className="text-[#9a8060]">{level}%</span>
       </div>
-      <div className="h-px bg-[#120f06] relative overflow-hidden">
+      <div className="h-px bg-[#1e1a0e] relative overflow-hidden">
         <div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#b8860b]/50 to-[#d4a843]/70 transition-all duration-700"
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#b8860b]/60 to-[#f0c040]/80"
           style={{ width: `${level}%` }}
         />
       </div>
@@ -45,27 +45,25 @@ export default function SkillSection() {
   return (
     <section id="skills" className="relative py-32 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
+
         {/* Section header */}
         <div className="flex items-center gap-6 mb-20">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1a1508]" />
-          <h2
-            className="text-[10px] tracking-[0.5em] uppercase text-[#3a2e1e]"
-            style={{ fontFamily: "var(--font-cinzel)" }}
-          >
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#3a2e1e]" />
+          <h2 className="text-sm tracking-[0.5em] uppercase text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>
             Keahlian
           </h2>
-          <div className="h-px w-12 bg-[#1a1508]" />
+          <div className="h-px w-12 bg-[#3a2e1e]" />
         </div>
 
-        {/* Dual column skills */}
+        {/* Dual column */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {/* QA */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="border border-[#1a1508] px-2 py-1">
-                <span className="text-[9px] tracking-[0.4em] text-[#3a2e1e]" style={{ fontFamily: "var(--font-cinzel)" }}>QA</span>
+              <div className="border border-[#2a2010] px-3 py-1.5">
+                <span className="text-xs tracking-[0.3em] text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>QA</span>
               </div>
-              <h3 className="text-sm text-[#c8b89a] tracking-wider" style={{ fontFamily: "var(--font-cinzel)" }}>
+              <h3 className="text-base text-[#e8d5b0] tracking-wider" style={{ fontFamily: "var(--font-cinzel)" }}>
                 Quality Assurance
               </h3>
             </div>
@@ -77,10 +75,10 @@ export default function SkillSection() {
           {/* WordPress */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="border border-[#1a1508] px-2 py-1">
-                <span className="text-[9px] tracking-[0.4em] text-[#3a2e1e]" style={{ fontFamily: "var(--font-cinzel)" }}>WP</span>
+              <div className="border border-[#2a2010] px-3 py-1.5">
+                <span className="text-xs tracking-[0.3em] text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>WP</span>
               </div>
-              <h3 className="text-sm text-[#c8b89a] tracking-wider" style={{ fontFamily: "var(--font-cinzel)" }}>
+              <h3 className="text-base text-[#e8d5b0] tracking-wider" style={{ fontFamily: "var(--font-cinzel)" }}>
                 WordPress Dev
               </h3>
             </div>
@@ -92,14 +90,14 @@ export default function SkillSection() {
 
         {/* Tools grid */}
         <div>
-          <p className="text-[9px] tracking-[0.5em] uppercase text-[#2a2010] mb-6 text-center" style={{ fontFamily: "var(--font-cinzel)" }}>
+          <p className="text-xs tracking-[0.5em] uppercase text-[#7a6848] mb-6 text-center" style={{ fontFamily: "var(--font-cinzel)" }}>
             Tools &amp; Teknologi
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {TOOLS.map((tool) => (
               <span
                 key={tool}
-                className="border border-[#1a1508] hover:border-[#b8860b]/30 text-[#4a3820] hover:text-[#8a7040] px-4 py-2 text-[10px] tracking-wider transition-all duration-200"
+                className="border border-[#2a2010] hover:border-[#d4a843]/50 text-[#7a6848] hover:text-[#d4a843] px-4 py-2 text-xs tracking-wider transition-all duration-200"
                 style={{ fontFamily: "var(--font-cinzel)" }}
               >
                 {tool}

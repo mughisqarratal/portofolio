@@ -1,53 +1,109 @@
-# 🌟 Portfolio Next.js
+# Portfolio — QA & WordPress Developer
 
-Web portfolio personal yang keren dibangun dengan **Next.js 14** + **Tailwind CSS**.
+Web portfolio personal dengan tema **dark & mysterious**, dibangun dengan **Next.js 15 + Tailwind CSS**.
 
-## ✨ Fitur
+---
 
-- 🎨 Dark theme dengan animated background blobs
-- 🖱️ Custom cursor effect
-- 📱 Fully responsive (mobile-first)
-- ⚡ Animasi smooth dengan pure CSS
-- 🎯 Scroll navigation aktif
-- 🔮 Glassmorphism cards
-- 📊 Skill bars dengan gradient
-- 📬 Contact form
-
-## 🚀 Cara Menjalankan
-
-```bash
-# Install dependencies
-npm install
-
-# Jalankan development server
-npm run dev
-```
-
-Buka [http://localhost:3000](http://localhost:3000) di browser.
-
-## 📁 Struktur
+## 🗂️ Struktur Proyek
 
 ```
-portfolio-nextjs/
+portfolio/
 ├── app/
-│   ├── layout.tsx     # Root layout + font setup
-│   ├── page.tsx       # Halaman utama (semua section)
-│   └── globals.css    # Global styles + animasi
-├── tailwind.config.ts # Konfigurasi Tailwind + custom blob animation
+│   ├── layout.tsx          ← Root layout + font
+│   ├── page.tsx            ← Assembler semua section
+│   └── globals.css         ← Global styles & tema
+│
+├── components/
+│   ├── SideNav.tsx         ← Navbar samping KANAN (tambahkan ikonmu di sini)
+│   ├── SocialBar.tsx       ← Ikon sosmed samping KIRI (tambahkan ikonmu di sini)
+│   ├── HeroSection.tsx     ← Halaman utama / hero
+│   ├── AboutSection.tsx    ← Tentang saya + dual identity
+│   ├── SkillSection.tsx    ← Skill QA + WordPress + tools
+│   ├── ProjectSection.tsx  ← Daftar proyek
+│   └── ContactSection.tsx  ← Form kontak
+│
+├── tailwind.config.ts
 ├── postcss.config.js
 ├── tsconfig.json
 └── package.json
 ```
 
-## 🎨 Kustomisasi
+---
 
-Edit `app/page.tsx` untuk mengubah:
-- **Nama & bio** di bagian Hero dan About
-- **Proyek** di array `projects`
-- **Skill** di array `skills`
-- **Warna aksen** (saat ini violet/fuchsia)
+## 🚀 Cara Menjalankan
 
-## 📦 Deploy ke Vercel
+```bash
+npm install
+npm run dev
+```
+
+Buka [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🎨 Cara Menambahkan Ikon Navigasi (SideNav)
+
+Buka `components/SideNav.tsx`.
+
+1. Install library ikon pilihanmu, misal:
+   ```bash
+   npm install lucide-react
+   # atau
+   npm install react-icons
+   ```
+
+2. Import ikon di bagian atas file:
+   ```tsx
+   import { Home, User, Code2, Briefcase, Mail } from "lucide-react";
+   ```
+
+3. Ganti array `NAV_ITEMS`:
+   ```tsx
+   const NAV_ITEMS = [
+     { id: "home",     label: "Home",     icon: <Home size={16} /> },
+     { id: "about",    label: "About",    icon: <User size={16} /> },
+     { id: "skills",   label: "Skills",   icon: <Code2 size={16} /> },
+     { id: "projects", label: "Projects", icon: <Briefcase size={16} /> },
+     { id: "contact",  label: "Contact",  icon: <Mail size={16} /> },
+   ];
+   ```
+
+---
+
+## 🔗 Cara Menambahkan Ikon Sosial Media (SocialBar)
+
+Buka `components/SocialBar.tsx`.
+
+1. Import ikon:
+   ```tsx
+   import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
+   ```
+
+2. Ganti array `SOCIAL_LINKS`:
+   ```tsx
+   const SOCIAL_LINKS = [
+     { label: "GitHub",    href: "https://github.com/username",      icon: <FiGithub size={15} /> },
+     { label: "LinkedIn",  href: "https://linkedin.com/in/username", icon: <FiLinkedin size={15} /> },
+     { label: "Instagram", href: "https://instagram.com/username",   icon: <FiInstagram size={15} /> },
+     { label: "Email",     href: "mailto:kamu@email.com",            icon: <FiMail size={15} /> },
+   ];
+   ```
+
+---
+
+## ✏️ Kustomisasi Konten
+
+| File | Yang bisa diubah |
+|------|-----------------|
+| `HeroSection.tsx` | Teks deskripsi, array ROLES (typewriter) |
+| `AboutSection.tsx` | Statistik, narasi, dua kartu identitas |
+| `SkillSection.tsx` | Level skill QA & WordPress, daftar tools |
+| `ProjectSection.tsx` | Daftar proyek, deskripsi, tags |
+| `ContactSection.tsx` | Email, lokasi, form |
+
+---
+
+## 🌐 Deploy ke Vercel
 
 ```bash
 npx vercel
