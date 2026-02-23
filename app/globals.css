@@ -2,33 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
+/* ── Font variables ── */
+:root {
+  --font-fell: 'IM Fell English', 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', 'Trajan Pro', serif;
 }
 
-
+/* ── Base ── */
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #050507;
+  color: #c8b89a;
+  font-family: var(--font-fell);
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* Noise texture subtle */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  background-blend-mode: overlay;
+}
+
+/* Vignette global */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(5, 5, 7, 0.7) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #080810;
+  background: #050507;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #7c3aed55;
+  background: #b8860b30;
   border-radius: 999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed99;
+  background: #b8860b60;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(184, 134, 11, 0.25);
+  color: #e8d5b0;
+}
+
+/* ── Utility: section separator ── */
+section {
+  position: relative;
+  z-index: 1;
 }
