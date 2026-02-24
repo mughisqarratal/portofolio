@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio — QA & WordPress Developer",
+  title: "Tjoet | Portofolio",
   description:
     "Portfolio seorang QA Engineer dan WordPress Developer. Membangun produk digital yang solid dan teruji.",
 };
