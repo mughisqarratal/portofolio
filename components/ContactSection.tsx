@@ -12,14 +12,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6 md:px-16">
+    <section id="contact" className="relative py-10 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
-        <div className="flex items-center gap-6 mb-20">
+        <div className="flex items-center gap-6 mb-10">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#3a2e1e]" />
-          <h2 className="text-sm tracking-[0.5em] uppercase text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>
-            Kontak
+          <h2 className="text-sm tracking-[0.5em] uppercase font-bold text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>
+            Contact
           </h2>
           <div className="h-px w-12 bg-[#3a2e1e]" />
         </div>
@@ -38,7 +38,7 @@ export default function ContactSection() {
 
             <div className="space-y-5">
               {[
-                { label: "Email",        value: "kamu@email.com" },
+                { label: "Email",        value: "cutqarratalmughis@email.com" },
                 { label: "Lokasi",       value: "Indonesia" },
                 { label: "Ketersediaan", value: "Terbuka untuk proyek baru" },
               ].map((item) => (

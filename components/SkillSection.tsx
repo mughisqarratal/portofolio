@@ -43,14 +43,14 @@ function SkillBar({ name, level }: { name: string; level: number }) {
 
 export default function SkillSection() {
   return (
-    <section id="skills" className="relative py-32 px-6 md:px-16">
+    <section id="skills" className="relative py-10 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
-        <div className="flex items-center gap-6 mb-20">
+        <div className="flex items-center gap-6 mb-10">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#3a2e1e]" />
-          <h2 className="text-sm tracking-[0.5em] uppercase text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>
-            Keahlian
+          <h2 className="text-sm tracking-[0.5em] uppercase font-bold text-[#9a8060]" style={{ fontFamily: "var(--font-cinzel)" }}>
+            Skills
           </h2>
           <div className="h-px w-12 bg-[#3a2e1e]" />
         </div>

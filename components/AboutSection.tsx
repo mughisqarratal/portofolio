@@ -8,7 +8,7 @@ const STATS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-32 px-6 md:px-16">
+    <section id="about" className="relative py-10 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
@@ -43,7 +43,7 @@ export default function AboutSection() {
             {/* Stats */}
             <div className="mt-10 grid grid-cols-3 gap-6">
               {STATS.map((s) => (
-                <div key={s.label} className="border-l-2 border-[#d4a843]/40 pl-4">
+                <div key={s.label} className="border-l-2 border-[#d4a843]/40 pl-1">
                   <div className="text-3xl text-[#d4a843]" style={{ fontFamily: "var(--font-fell)" }}>{s.value}</div>
                   <div className="text-xs text-[#7a6848] tracking-wider mt-1" style={{ fontFamily: "var(--font-cinzel)" }}>{s.label}</div>
                 </div>
